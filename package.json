@@ -1,0 +1,26 @@
+{
+  "name": "nqm-app-journeys",
+  "private": true,
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "babel-preset-stage-1": "^6.16.0",
+    "leaflet": "^0.7.7",
+    "material-ui": "^0.15.4",
+    "meteor-node-stubs": "~0.2.0",
+    "react": "^15.3.2",
+    "react-addons-create-fragment": "^15.3.2",
+    "react-addons-css-transition-group": "^15.3.2",
+    "react-addons-linked-state-mixin": "^15.3.2",
+    "react-addons-perf": "^15.3.2",
+    "react-addons-pure-render-mixin": "^15.3.2",
+    "react-addons-test-utils": "^15.3.2",
+    "react-addons-update": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-komposer": "^1.13.1",
+    "react-leaflet": "^0.12.3",
+    "react-mounter": "^1.2.0",
+    "react-tap-event-plugin": "^1.0.0"
+  }
+}
