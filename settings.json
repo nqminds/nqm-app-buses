@@ -1,9 +1,8 @@
 {
-  "public": {
-    "ddpServerURL": 	"https://tbx.nq-m.com/",
-    "authServerURL": 	"https://tdx.nq-m.com",
-  	"fleetTable": 		"BJlZMycf0",
-	"journeysTable": 	"BJldSyqz0",
-	"sharedKeyFile":	"sharedkey.js"
+	"public": {
+		"ddpServerURL": "https://tbx.nq-m.com/",
+		"authServerURL": "https://tdx.nq-m.com",
+		"busTable": "S1xVSpWHR",
+		"sharedKeyFile": "sharedkey.js"
 	}
 }

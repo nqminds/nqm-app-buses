@@ -82,7 +82,7 @@ class Layout extends React.Component{
     return (
       <MuiThemeProvider muiTheme={muiTheme}>
         <div>
-          <AppBar style={styles.appBar} title="NQM Fleet Management" showMenuIconButton={false} iconElementRight={menuButton} />
+          <AppBar style={styles.appBar} title="NQM Bus Management" showMenuIconButton={false} iconElementRight={menuButton} />
           <div style={styles.layoutContent}>
             {content}
           </div>

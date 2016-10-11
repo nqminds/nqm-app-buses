@@ -7,58 +7,60 @@ import {List, ListItem} from 'material-ui/List';
 import Subheader from 'material-ui/Subheader';
 import {darkBlack, blue500} from 'material-ui/styles/colors';
 
-export default class FleetData extends React.Component {
+class BusData extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {defaultIconType: "label_outline"};
 
-    this._onSelectFleet = this._onSelectFleet.bind(this);
-    this._onClickFleet = this._onClickFleet.bind(this);    
+    this._onSelectBus = this._onSelectBus.bind(this);
+    //this._onClickBus = this._onClickBus.bind(this);    
   }
 
-  _onSelectFleet() {
-    console.log("Fleet selected.");    
+  _onSelectBus() {
+    console.log("Bus selected.");    
   }
 
-  _onClickFleet() {
-    console.log("Fleet clicked");
+  _onClickBus() {
+    console.log("New Bus clicked");
   }
 
   render() {
     let self = this;
 
     const list = _.map(this.props.data, function(d,i) {
-          const avatar = 'images/'+d.Avatar;
+          const avatar = 'images/bus.png';
           return <ListItem
               key={i}
               leftAvatar={<Avatar src={avatar} />}
               rightIconButton={
-                <IconButton onClick = {this._onSelectFleet}>
+                <IconButton onClick = {this._onSelectBus}>
                   <FontIcon className="material-icons" color={blue500}>{self.state.defaultIconType}</FontIcon>
                 </IconButton>
               }
-              primaryText={d.Name}
+              primaryText={d.Title}
               secondaryText={
                 <p>
                   <span style={{color: darkBlack}}>ID: {d.ID}</span><br />
-                  {d.Description}
+                  {d.Host}
                 </p>
               }
               secondaryTextLines={2}
-              onClick={this._onClickFleet}
+              onClick={self._onClickBus.bind(this)}
             />
     });
 
     return (
       <List>
-        <Subheader>Fleet</Subheader>
+        <Subheader>Available Buses</Subheader>
         {list}
       </List>
     );
   }
 }
 
-FleetData.propTypes = {
+BusData.propTypes = {
   data: React.PropTypes.array.isRequired
 };
+
+export default BusData;
