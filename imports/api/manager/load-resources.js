@@ -11,14 +11,15 @@ function loadResource({filter, options}, onData) {
   const sub = connectionManager.subscribe("resources",filter, options, {
     onError(err) {
       console.log("error subscribing to resources: " + err.message);
-    },
-    onReady() {
-      // The subscription is ready - fetch the local results.
-      const resources = connectionManager.resourceCollection.find(filter,options).fetch();
-      // Pass on to the component via the resources property.
-      onData(null, {resources: resources});
-    }
-  });
+    }}
+  );
+
+  if (sub.ready()) {
+    // The subscription is ready - fetch the local results.
+    const resources = connectionManager.resourceCollection.find(filter,options).fetch();
+    // Pass on to the component via the resources property.
+    onData(null, {resources: resources});
+  }    
 }
 
 export default loadResource;

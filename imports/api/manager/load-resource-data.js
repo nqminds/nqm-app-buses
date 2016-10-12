@@ -11,19 +11,19 @@ function loadResourceData({resourceId, filter, options}, onData) {
   const sub = connectionManager.subscribe("datasetData",resourceId, filter, options, {
     onError(err) {
       console.log("error subscribing to datasetData: " + err.message);
-    },
-    onReady() {
-      // The subscription is ready
-      filter = filter || {};
-      // Add filter for dataset data (all datasetData subscriptions are stored in the same collection).
-      filter._d = resourceId;
-      // Fetch the data from the local cache.
-      const datasetData = connectionManager.datasetDataCollection.find(filter,options).fetch();
-      // Pass the data on to the component via the data property.      
-      onData(null, {data: datasetData});
-    }
-  });
+    }}
+  );
+
+  if (sub.ready()) {
+    // The subscription is ready
+    filter = filter || {};
+    // Add filter for dataset data (all datasetData subscriptions are stored in the same collection).
+    filter._d = resourceId;
+    // Fetch the data from the local cache.
+    const datasetData = connectionManager.datasetDataCollection.find(filter,options).fetch();
+    // Pass the data on to the component via the data property.      
+    onData(null, {data: datasetData});
+  }
 }
 
 export default loadResourceData;
-

@@ -16,14 +16,21 @@ const styles = {
 class BusApp extends React.Component {
   constructor(props) {
     super(props);
+
+    //this._onClickBusExecute = this._onClickBusExecute.bind(this);
+  }
+
+  _onClickBusExecute(id) {
+    console.log("From App:"+id)
   }
 
   render() {
+    var self = this;
     return (
       <div className="flex-container-row">
         <div className="flex-item-1-row">
           <Paper zDepth={1}>
-            <BusDataList resourceId={Meteor.settings.public.busTable} />
+            <BusDataList resourceId={Meteor.settings.public.busTable} onClickBusExecute={self._onClickBusExecute.bind(this)} />
           </Paper>
         </div>
         <div className="flex-item-2-row">

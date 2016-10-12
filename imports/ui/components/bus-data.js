@@ -14,15 +14,16 @@ class BusData extends React.Component {
     this.state = {defaultIconType: "label_outline"};
 
     this._onSelectBus = this._onSelectBus.bind(this);
-    //this._onClickBus = this._onClickBus.bind(this);    
+    this._onClickBus = this._onClickBus.bind(this);
   }
 
   _onSelectBus() {
     console.log("Bus selected.");    
   }
 
-  _onClickBus() {
-    console.log("New Bus clicked");
+  _onClickBus(id) {
+    console.log("First ID:"+id);
+    this.props.onClickBusExecute(id);
   }
 
   render() {
@@ -46,7 +47,7 @@ class BusData extends React.Component {
                 </p>
               }
               secondaryTextLines={2}
-              onClick={self._onClickBus.bind(this)}
+              onClick={self._onClickBus.bind(this, d.ID)}
             />
     });
 
@@ -60,7 +61,8 @@ class BusData extends React.Component {
 }
 
 BusData.propTypes = {
-  data: React.PropTypes.array.isRequired
+  data: React.PropTypes.array.isRequired,
+  onClickBusExecute: React.PropTypes.func.isRequired
 };
 
 export default BusData;
