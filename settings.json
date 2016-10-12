@@ -3,6 +3,7 @@
 		"ddpServerURL": "https://tbx.nq-m.com/",
 		"authServerURL": "https://tdx.nq-m.com",
 		"busTable": "S1xVSpWHR",
+		"gpsTable":"Hkgur7zKC",
 		"sharedKeyFile": "sharedkey.js"
 	}
 }

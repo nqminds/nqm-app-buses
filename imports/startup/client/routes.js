@@ -9,7 +9,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 
 import connectionManager from "../../api/manager/connection-manager";
 import Layout from "../../ui/layouts/layout-container";
-import BusApp from "../../ui/pages/BusApp";
+import BusAppData from "../../ui/pages/busapp-data-container";
 
 var sharedkey;
 
@@ -41,7 +41,7 @@ FlowRouter.route("/", {
   action: function (params, queryParams) {
     mount(Layout, {
       content: function () {
-        return <BusApp / > ;
+        return <BusAppData resourceId={Meteor.settings.public.busTable} /> ;
       }
     });
   }

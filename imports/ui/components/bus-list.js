@@ -11,7 +11,9 @@ class BusData extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {defaultIconType: "label_outline"};
+    this.state = {
+      defaultIconType: "label_outline"
+    };
 
     this._onSelectBus = this._onSelectBus.bind(this);
     this._onClickBus = this._onClickBus.bind(this);
