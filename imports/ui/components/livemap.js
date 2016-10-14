@@ -8,16 +8,20 @@ const defaultData = [{ID:defaultID, timestamp:0, lat:52.008778, lon:-0.771088, e
 class Livemap extends React.Component {
   constructor() {
     super();
+
+    this.centerPosition = defaultData[0];
+  }
+
+  componentWillReceiveProps(nextProps) {      
+      let position = _.find(nextProps.data, function(el){return el.ID==nextProps.clickBusID});
+
+      if (position!==undefined)
+        this.centerPosition = position;
   }
 
   render() {
       var self = this;
       
-      let centerPosition = _.find(this.props.data, function(el){return el.ID==self.props.clickBusID});
-
-      if (centerPosition===undefined)
-        centerPosition = this.props.data[0];
-
       const busIcon = L.icon({ iconUrl: 'images/bus.png', iconSize: [32, 32], });
       const listMarker = _.map(this.props.data, function (d, i) {
           let popupText = _.find(self.props.busData, function(el) { return el.ID == d.ID; });
@@ -35,7 +39,7 @@ class Livemap extends React.Component {
       });
 
       return (
-          <Map center={[centerPosition.lat, centerPosition.lon]} zoom={18}>
+          <Map center={[this.centerPosition.lat, this.centerPosition.lon]} zoom={18}>
               <TileLayer
                   url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
                   attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
