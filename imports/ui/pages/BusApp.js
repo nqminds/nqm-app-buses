@@ -20,8 +20,11 @@ class BusApp extends React.Component {
 
     this.state = {
       currentBusID: 1,
-      busList:{}
+      busList:[]
     };
+
+    this.busCollection = {};
+
     //this._onClickBusExecute = this._onClickBusExecute.bind(this);
   }
 
@@ -30,18 +33,19 @@ class BusApp extends React.Component {
   }
 
   _onSelectBusExecute(id) {
-    let _busList = this.state.busList;
+    let _busList = [];
 
-    _busList[id.id] = id.state;
+    this.busCollection[id.id] = id.state;
+    _.forEach(this.busCollection, function(val, key, collection){ if(val) _busList.push(key);});
     this.setState({busList:_busList});
-
-    console.log(_.without(_.map(this.state.busList, function(val, key){if (val) return key; else return null;}), null));
   }
 
   render() {
     var self = this;
-    var mongodbFilter = {ID: {$eq: this.state.currentBusID}};
+    var mongodbFilter ={ID: {$eq: this.state.currentBusID}};
     var mongodbOptions = {sort: { timestamp: -1 }, limit: 1};
+
+    console.log(mongodbFilter);
 
     return (
       <div className="flex-container-row">

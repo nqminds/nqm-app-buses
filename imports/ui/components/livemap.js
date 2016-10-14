@@ -21,6 +21,7 @@ class Livemap extends React.Component {
 
   render() {
       var self = this;
+      console.log(this.props.data);
       
       const busIcon = L.icon({ iconUrl: 'images/bus.png', iconSize: [32, 32], });
       const listMarker = _.map(this.props.data, function (d, i) {
