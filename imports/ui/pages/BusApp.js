@@ -36,17 +36,14 @@ class BusApp extends React.Component {
     let _busList = [];
 
     this.busCollection[id.id] = id.state;
-    _.forEach(this.busCollection, function(val, key, collection){ if(val) _busList.push(key);});
+    _.forEach(this.busCollection, function(val, key, collection){ if(val) _busList.push(Number(key));});
     this.setState({busList:_busList});
   }
 
   render() {
     var self = this;
-    var mongodbFilter ={ID: {$eq: this.state.currentBusID}};
-    var mongodbOptions = {sort: { timestamp: -1 }, limit: 1};
-
-    console.log(mongodbFilter);
-
+    var mongodbFilter = {ID: {$in: this.state.busList}};
+    
     return (
       <div className="flex-container-row">
         <div className="flex-item-1-row">
@@ -60,9 +57,8 @@ class BusApp extends React.Component {
         <div className="flex-item-2-row">
           <div className="leaflet-container">
               <LivemapContainer
-                resourceId={Meteor.settings.public.gpsTable}
+                resourceId={Meteor.settings.public.gpsTableLatest}
                 filter={mongodbFilter}
-                options={mongodbOptions}
                 busData={self.props.data}
                 clickBusID={this.state.currentBusID}/>
           </div>

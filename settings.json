@@ -4,6 +4,7 @@
 		"authServerURL": "https://tdx.nq-m.com",
 		"busTable": "S1xVSpWHR",
 		"gpsTable":"Hkgur7zKC",
+		"gpsTableLatest":"HkldKIOAA",
 		"sharedKeyFile": "sharedkey.js"
 	}
 }
