@@ -1,4 +1,3 @@
-import {composeWithTracker} from "react-komposer";
 import connectionManager from "./connection-manager";
 
 function checkAuthenticated(props, onData) {

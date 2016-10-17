@@ -22,10 +22,6 @@ class ConnectionManager {
       console.log("connected to %s", Meteor.settings.public.ddpServerURL);
       this.connected = true;
 
-      // Initialise collections
-      this.resourceCollection = new Mongo.Collection("AS.Resource", { connection: this._connection });
-      this.datasetDataCollection = new Mongo.Collection("DatasetData", { connection: this._connection });
-
       return true;
     } else {
       console.log("failed to create ddp connection to %s", Meteor.settings.ddpServerURL);
@@ -45,6 +41,11 @@ class ConnectionManager {
         console.log("ddpConnection auth result: " + result);
 
         self.authToken = token;
+        self._connection.setUserId(result);
+
+        // Initialise collections
+        self.resourceCollection = new Mongo.Collection("AS.Resource", { connection: self._connection });
+        self.datasetDataCollection = new Mongo.Collection("DatasetData", { connection: self._connection });
 
         // Successfully authenticated - update the reactive variable.
         self.authenticated.set(true);
