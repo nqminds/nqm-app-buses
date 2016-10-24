@@ -10,7 +10,7 @@ function loadResourceData({resourceId, filter, options}, onData) {
   // The subscription will automatically re-run if any of the parameters change (i.e. resourceId, filter or options).
   const sub = connectionManager.subscribe("datasetData",resourceId, filter, options, {
     onError(err) {
-      console.log("error subscribing to datasetData: " + err.message);
+      console.log("error subscribing to datasetData: " + err.message+" with resourceId="+resourceId);
     }}
   );
 

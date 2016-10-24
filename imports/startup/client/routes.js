@@ -13,8 +13,8 @@ import BusAppData from "../../ui/pages/busapp-data-container";
 
 var sharedkey;
 
-if (Meteor.settings.public.sharedKeyFile)
-  sharedkey = require("../../../" + Meteor.settings.public.sharedKeyFile);
+if (Meteor.settings.public.sharedKeyFile && process.env.NODE_ENV=="development")
+  sharedkey = require("../../../"+Meteor.settings.public.sharedKeyFile);
 
 injectTapEventPlugin();
 

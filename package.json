@@ -1,5 +1,5 @@
 {
-  "name": "nqm-app-journeys",
+  "name": "nqm-app-buses",
   "private": true,
   "scripts": {
     "start": "meteor run"
@@ -25,5 +25,17 @@
   },
   "devDependencies": {
     "@types/lodash": "^4.14.37"
-  }
+  },
+  "description": "NQM App Buses",
+  "version": "1.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nqminds/nqm-app-buses.git"
+  },
+  "author": "Alexandru Mereacre",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nqminds/nqm-app-buses/issues"
+  },
+  "homepage": "https://github.com/nqminds/nqm-app-buses#readme"
 }
