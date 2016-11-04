@@ -26,8 +26,6 @@ class Livemap extends React.Component {
     render() {
         var self = this;
 
-        console.log(this.props.data.length);
-        
         const busIcon = L.icon({ iconUrl: 'images/bus.png', iconSize: [32, 32], });
         const listMarker = _.map(this._data, function (d, i) {
             let popupText = _.find(self.props.busData, function (el) { return el.ID == d.ID; });
@@ -45,7 +43,12 @@ class Livemap extends React.Component {
         });
 
         return (
-            <Map center={[this.centerPosition.lat, this.centerPosition.lon]} zoom={18}>
+            <Map
+                center={[this.centerPosition.lat, this.centerPosition.lon]}
+                zoom={18}
+                scrollWheelZoom={false}
+                touchZoom={false}
+            >
                 <TileLayer
                     url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
                     attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
