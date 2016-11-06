@@ -41,28 +41,44 @@ class BusApp extends React.Component {
   }
 
   render() {
+    const appBarHeight = Meteor.settings.public.showAppBar !== false ? 50 : 0;
+    const leftPanelWidth = 300;
+    const styles = {
+      root: {
+        height: "100%"
+      },
+      leftPanel: {
+        position: "fixed",
+        top: appBarHeight,
+        bottom: 0,
+        width: leftPanelWidth
+      },
+      mainPanel: {
+        position: "absolute",        
+        top: appBarHeight,
+        bottom: 0,
+        left: leftPanelWidth,
+        right: 0
+      }
+    };
     var self = this;
     var mongodbFilter = {ID: {$in: this.state.busList}};
     
     return (
-      <div className="flex-container-row">
-        <div className="flex-item-1-row">
-          <Paper zDepth={1}>
+        <div style={styles.root}>
+          <div style={styles.leftPanel}>
             <BusList
               data={self.props.data}
               onClickBusExecute={self._onClickBusExecute.bind(this)}
               onSelectBusExecute={self._onSelectBusExecute.bind(this)}/>
-          </Paper>
-        </div>
-        <div className="flex-item-2-row">
-          <div className="leaflet-container">
+          </div>
+          <div style={styles.mainPanel}>
               <LivemapContainer
                 resourceId={Meteor.settings.public.gpsTableLatest}
                 filter={mongodbFilter}
                 busData={self.props.data}
                 clickBusID={this.state.currentBusID}/>
           </div>
-        </div>
       </div>  
     );
   }
