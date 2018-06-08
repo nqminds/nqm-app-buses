@@ -1,41 +1,29 @@
 {
   "name": "nqm-app-buses",
-  "private": true,
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "meteor run"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-    "babel-preset-stage-1": "^6.16.0",
-    "leaflet": "^1.0.1",
-    "material-ui": "^0.15.4",
-    "meteor-node-stubs": "~0.2.0",
-    "react": "^15.3.2",
-    "react-addons-create-fragment": "^15.3.2",
-    "react-addons-css-transition-group": "^15.3.2",
-    "react-addons-linked-state-mixin": "^15.3.2",
-    "react-addons-perf": "^15.3.2",
-    "react-addons-pure-render-mixin": "^15.3.2",
-    "react-addons-test-utils": "^15.3.2",
-    "react-addons-update": "^15.3.2",
-    "react-dom": "^15.3.2",
-    "react-komposer": "^1.13.1",
-    "react-leaflet": "^1.0.0-rc.1",
-    "react-mounter": "^1.2.0",
-    "react-tap-event-plugin": "^1.0.0"
-  },
-  "devDependencies": {
-    "@types/lodash": "^4.14.37"
-  },
-  "description": "NQM App Buses",
-  "version": "1.0.1",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nqminds/nqm-app-buses.git"
   },
-  "author": "Alexandru Mereacre",
+  "author": "iglautier",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/nqminds/nqm-app-buses/issues"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.1.0",
+    "eslint": "^3.10.2",
+    "eslint-find-rules": "^1.14.3",
+    "eslint-plugin-babel": "^3.2.0",
+    "eslint-plugin-json": "^1.2.0",
+    "eslint-plugin-mocha": "^4.7.0",
+    "eslint-plugin-node": "^3.0.4",
+    "eslint-plugin-react": "^6.7.1"
   },
   "homepage": "https://github.com/nqminds/nqm-app-buses#readme"
 }
