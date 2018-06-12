@@ -1,6 +1,7 @@
 {
 	"public": {
-		"ddpServerURL": "https://tbx.nq-m.com/",
+		"appToken": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ0ZHgubnEtbS5jb20iLCJhdWQiOiJ0ZHgubnEtbS5jb20iLCJzdWIiOiJTSmVsMDFQNmU3IiwicmVmIjoiOjpmZmZmOjMxLjQ5LjYyLjAiLCJ2ZXIiOjEsIm93biI6Im5xbWluZHNAZ21haWwuY29tL3RkeC5ucS1tLmNvbSIsImV4cCI6MTY4NjQ5NTk1NywiaWF0IjoxNTI4ODE1OTU3fQ.kuTQCC6szaXGGDewGpRTNrZxGy_kS05O7kWix5cpplYv_Cot87mxReNA9UP8kuI2v0onRCY0eDqg7GB0U4y8Y1lpaYQ--Dn24RT83GZd59XrD_XcQ3CZR5fMhskTW5rOmCgJOlCBTGN7q3m2y_XhZOQ2EO7WjpbSVN6ivVfJs0inv7Tywv-eR6p8CWdh0pTmlbMvlXtYvSx_6oFqBsDoMqX-auXcVJV-LNv_sgJ4asD_RA96qtzPSKM_JzjH4DerAvkvq7f7CX63FDZabO_RspLgLR305kuBmG9cvhB2nhVzCaNkt321tKQnWdbBvuNmR-RuVya1aZ0L4gmlG14scQ",
+		"ddpServerURL": "https://ddp.nq-m.com/",
 		"authServerURL": "https://tdx.nq-m.com",
 		"busTable": "S1xVSpWHR",
 		"gpsTable":"Hkgur7zKC",
